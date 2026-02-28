@@ -234,42 +234,38 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
     });
   }
 
-  // Carousel Logic & Auto-play
   let currentSlide = 0;
-  const totalSlides = 2; // We have vision.png and vision2.png
-  let slideInterval; // Variable to store the interval timer
+  const totalSlides = 2;
+  let slideInterval;
 
   function moveSlide(direction) {
     currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
     updateCarousel();
-    resetAutoPlay(); // Reset timer on manual navigation
+    resetAutoPlay();
   }
 
   function setSlide(index) {
     currentSlide = index;
     updateCarousel();
-    resetAutoPlay(); // Reset timer on manual navigation
+    resetAutoPlay();
   }
 
   function updateCarousel() {
     const track = document.getElementById('results-track');
     const dots = document.querySelectorAll('.dot');
     
-    // Move the track
     track.style.transform = `translateX(-${currentSlide * 100}%)`;
     
-    // Update dots
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === currentSlide);
     });
   }
 
-  // Auto-play functions
   function startAutoPlay() {
     slideInterval = setInterval(() => {
       currentSlide = (currentSlide + 1) % totalSlides;
       updateCarousel();
-    }, 3000); // 3000 milliseconds = 3 seconds per slide
+    }, 5000);
   }
 
   function stopAutoPlay() {
@@ -281,10 +277,8 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
     startAutoPlay();
   }
 
-  // Initialize auto-play when page loads
   startAutoPlay();
 
-  // Pause auto-play when hovering over the carousel wrapper
   const carouselWrapper = document.getElementById('results-carousel');
   carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
   carouselWrapper.addEventListener('mouseleave', startAutoPlay);

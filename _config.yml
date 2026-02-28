@@ -22,7 +22,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Junjiang Wu"
-  avatar           : "https://github.com/Junjiang-Wu/junjiang-wu.github.io/blob/main/images/profile.jpg"
+  avatar           : "/images/profile.jpg"
   bio              : "Researcher in Deepfake Detection & Information Security"
   location         : "Urumqi, China"
   employer         : "Xinjiang University"

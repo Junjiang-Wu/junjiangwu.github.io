@@ -24,12 +24,14 @@ I am currently a graduate student at the School of Computer Science and Technolo
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='/images/framework.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='/images/framework.png' alt="sym" width="100%" style="object-fit: cover; height: 100%; min-height: 180px;"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark]()
 
 **Junjiang Wu**, Liejun Wang, Zhiqing Guo
+
+- This work proposes a proactive forensics framework based on a novel 152-D landmark-identity watermark (LIDMark), unifying deepfake detection, tampering localization, and source tracing for the first time.
 
 </div>
 </div>

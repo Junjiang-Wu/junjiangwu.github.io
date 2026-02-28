@@ -18,12 +18,10 @@ layout: single
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 <style>
-  /* 全局统一为英文新罗马字体 */
   body, p, h1, h2, h3, h4, h5, h6, div, span, a, strong, em, button {
     font-family: "Times New Roman", Times, serif !important;
   }
 
-  /* 标题与会议标签整合，分配为三行 */
   .project-title { font-size: 2.2em; font-weight: bold; text-align: center; margin: 30px 0 25px; color: #2c3e50; line-height: 1.4;}
   .conference-tag-inline { font-size: 0.6em; font-weight: bold; display: inline-block; margin-top: 10px; }
 
@@ -31,36 +29,34 @@ layout: single
   .institution-list { text-align: center; font-size: 0.95em; color: #7f8c8d; margin-bottom: 30px; line-height: 1.5;}
   .btn-container { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
   
-  /* 按钮基础样式与从左到右渐变特效 */
   .action-btn {
     position: relative;
     display: flex; align-items: center; padding: 10px 24px; border-radius: 30px;
     background-color: #2c3e50; color: #ffffff !important; text-decoration: none;
     font-size: 15px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    overflow: hidden; /* 保证内部渐变不超出圆角 */
+    overflow: hidden;
     z-index: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .action-btn::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; height: 100%; width: 0; /* 初始宽度为0 */
-    background: linear-gradient(to right, #3498db, #9b59b6); /* 蓝变紫 */
+    top: 0; left: 0; height: 100%; width: 0;
+    background: linear-gradient(to right, #3498db, #9b59b6);
     z-index: -1;
-    transition: width 0.4s ease-in-out; /* 宽度展开动画 */
+    transition: width 0.4s ease-in-out;
   }
   .action-btn:hover {
     transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   }
   .action-btn:hover::before {
-    width: 100%; /* 鼠标悬停时从左向右填满 */
+    width: 100%;
   }
   .action-btn svg, .action-btn span {
-    position: relative; z-index: 2; /* 确保文字和图标在渐变层之上 */
+    position: relative; z-index: 2;
   }
   .action-btn svg { margin-right: 8px; width: 1.2em; height: 1.2em; fill: currentColor; }
 
-  /* 蓝紫渐变滑动下划线链接特效 */
   .hover-gradient-link {
     position: relative;
     text-decoration: none !important;
@@ -164,6 +160,7 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
   function copyBibtex() {
     const bibtexCode = document.getElementById('bibtex-text').innerText;
     navigator.clipboard.writeText(bibtexCode).then(() => {
+      // 修改：只改变 span 里面的文字，防止覆盖图标
       const btnSpan = document.querySelector('#copy-bibtex-btn span');
       btnSpan.innerText = 'Copied!';
       setTimeout(() => { 

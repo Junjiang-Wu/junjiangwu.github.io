@@ -18,61 +18,74 @@ layout: single
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 <style>
-  .project-title { font-size: 2.2em; font-weight: bold; text-align: center; margin: 30px 0 10px; color: #2c3e50; line-height: 1.3;}
-  .conference-tag { font-size: 1.3em; text-align: center; font-weight: bold; margin-bottom: 25px; }
+  /* 新增：全局统一为英文新罗马字体 */
+  body, p, h1, h2, h3, h4, h5, h6, div, span, a, strong, em, button {
+    font-family: "Times New Roman", Times, serif !important;
+  }
+
+  /* 标题与会议标签整合，分配为三行 */
+  .project-title { font-size: 2.2em; font-weight: bold; text-align: center; margin: 30px 0 25px; color: #2c3e50; line-height: 1.4;}
+  .conference-tag-inline { font-size: 0.6em; font-weight: bold; display: inline-block; margin-top: 10px; }
+
   .author-list { text-align: center; font-size: 1.1em; margin-bottom: 10px; }
   .institution-list { text-align: center; font-size: 0.95em; color: #7f8c8d; margin-bottom: 30px; line-height: 1.5;}
   .btn-container { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
+  
+  /* 按钮基础样式与从左到右渐变特效 */
   .action-btn {
+    position: relative;
     display: flex; align-items: center; padding: 10px 24px; border-radius: 30px;
     background-color: #2c3e50; color: #ffffff !important; text-decoration: none;
-    font-size: 15px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 15px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden; /* 保证内部渐变不超出圆角 */
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .action-btn:hover { background-color: #1a252f; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+  .action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; height: 100%; width: 0; /* 初始宽度为0 */
+    background: linear-gradient(to right, #3498db, #9b59b6); /* 蓝变紫 */
+    z-index: -1;
+    transition: width 0.4s ease-in-out; /* 宽度展开动画 */
+  }
+  .action-btn:hover {
+    transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+  .action-btn:hover::before {
+    width: 100%; /* 鼠标悬停时从左向右填满 */
+  }
+  .action-btn svg, .action-btn span {
+    position: relative; z-index: 2; /* 确保文字和图标在渐变层之上 */
+  }
   .action-btn svg { margin-right: 8px; width: 1.2em; height: 1.2em; fill: currentColor; }
 
-  /* 新增：蓝紫渐变滑动下划线链接特效 */
+  /* 蓝紫渐变滑动下划线链接特效 */
   .hover-gradient-link {
     position: relative;
     text-decoration: none !important;
-    color: #3498db !important; /* 蓝色字体 */
+    color: #3498db !important; 
     display: inline-block;
   }
-  .hover-gradient-link strong {
-    color: #3498db !important; /* 确保作者名字加粗时依然是蓝色 */
-  }
+  .hover-gradient-link strong { color: #3498db !important; }
   .hover-gradient-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background: linear-gradient(to right, #3498db, #9b59b6); /* 从蓝到紫的渐变色 */
-    transition: width 0.3s ease-in-out; /* 宽度从0到100%的滑动动画时长 */
+    content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0;
+    background: linear-gradient(to right, #3498db, #9b59b6);
+    transition: width 0.3s ease-in-out;
   }
-  .hover-gradient-link:hover::after {
-    width: 100%; /* 鼠标悬停时，线条展开满宽度 */
-  }
+  .hover-gradient-link:hover::after { width: 100%; }
 </style>
 
-<div class="project-title">All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark</div>
-<div class="conference-tag">
-  (<a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank" class="hover-gradient-link">CVPR 2026</a>)
+<div class="project-title">
+  All in One: Unifying Deepfake Detection, Tampering Localization,<br>
+  and Source Tracing with a Robust Landmark-Identity Watermark<br>
+  <span class="conference-tag-inline">(<a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank" class="hover-gradient-link" style="color:#2c3e50 !important;">CVPR 2026</a>)</span>
 </div>
 
 <div class="author-list">
-  <a href="https://junjiang-wu.github.io/" target="_blank" class="hover-gradient-link">
-    <strong>Junjiang Wu</strong>
-  </a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
-
-  <a href="https://it.xju.edu.cn/info/1155/3270.htm" target="_blank" class="hover-gradient-link">
-    <strong>Liejun Wang</strong>
-  </a><sup>1,2 *</sup>&nbsp;&nbsp;&nbsp;&nbsp;
-
-  <a href="http://www.guozhiqing.cn/" target="_blank" class="hover-gradient-link">
-    <strong>Zhiqing Guo</strong>
-  </a><sup>1,2 *</sup>
+  <a href="https://junjiang-wu.github.io/" target="_blank" class="hover-gradient-link"><strong>Junjiang Wu</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://it.xju.edu.cn/info/1155/3270.htm" target="_blank" class="hover-gradient-link"><strong>Liejun Wang</strong></a><sup>1,2 *</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="http://www.guozhiqing.cn/" target="_blank" class="hover-gradient-link"><strong>Zhiqing Guo</strong></a><sup>1,2 *</sup>
 </div>
 
 <div class="institution-list">
@@ -83,7 +96,9 @@ layout: single
 
 <div class="btn-container">
   <a href="#" target="_blank" class="action-btn">
-    <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 132H256V55.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z"></path></svg>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM13 3.5L18.5 9H13V3.5zM10.8 15.6c-.6 1.4-1.6 2.4-2.8 2.4-.7 0-1.3-.4-1.3-1 0-.9 1.1-1.6 2.8-2.1.4-1.1.8-2.4 1-3.6-1.1-1.9-1.5-3.4-1.1-4.1.3-.5 1.1-.5 1.6.1.4.5.3 1.7-.1 3 1.1 1.1 2.5 1.9 4 2.3 1.3-.1 2.4.1 2.8.6.3.3.3.8-.2 1.2-.6.5-1.7.4-3.1-.4-1.3.5-2.5 1.1-3.6 1.6zm-1.8.8c.6 0 1.3-.6 1.8-1.5-1.1.3-1.8.8-1.8 1.5zm3.1-6.9c-.1-.7-.2-1.4-.4-1.9.3-1.1.5-1.7.3-1.9 0 0-.1-.1-.2-.1-.2.1-.2.6.3 3.9zm-1.1 2.9c.8 1.2 1.8 2 2.7 2.5.9.4 1.7.5 2.1.1.1-.1.1-.3-.1-.5-.5-.4-1.4-.5-2.5-.4-1.1-.6-2.2-1.2-3.2-1.9.4.1.7.2 1 .2z"></path>
+    </svg>
     <span>Paper</span>
   </a>
   <a href="https://github.com/vpsg-research/LIDMark" target="_blank" class="action-btn">
@@ -127,16 +142,20 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
 </div>
 
 <h2 style="text-align: left; max-width: 800px; margin: 0 auto 15px auto;">BibTeX</h2>
-<div style="position: relative; max-width: 800px; margin: 0 auto 40px auto; background-color: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; overflow-x: auto;">
-  <button id="copy-bibtex-btn" onclick="copyBibtex()" style="position: absolute; top: 12px; right: 12px; padding: 6px 12px; background-color: #ffffff; border: 1px solid #d0d7de; border-radius: 6px; font-size: 13px; font-weight: 500; color: #24292f; cursor: pointer; transition: background-color 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.04);" onmouseover="this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.backgroundColor='#ffffff'">
-    Copy
-  </button>
-  <pre style="margin: 0; font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; font-size: 14px; line-height: 1.45; color: #24292f; white-space: pre-wrap; word-wrap: break-word;"><code id="bibtex-text">@inproceedings{wu2026lidmark,
+<div style="max-width: 800px; margin: 0 auto 40px auto;">
+  <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+    <button id="copy-bibtex-btn" onclick="copyBibtex()" style="padding: 6px 14px; background-color: #ffffff; border: 1px solid #d0d7de; border-radius: 6px; font-size: 13px; font-weight: bold; color: #24292f; cursor: pointer; transition: background-color 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.04);" onmouseover="this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.backgroundColor='#ffffff'">
+      Copy
+    </button>
+  </div>
+  <div style="background-color: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; overflow-x: auto;">
+    <pre style="margin: 0; font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; font-size: 14px; line-height: 1.45; color: #24292f; white-space: pre-wrap; word-wrap: break-word;"><code id="bibtex-text">@inproceedings{wu2026lidmark,
   title={All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark},
   author={Wu, Junjiang and Wang, Liejun and Guo, Zhiqing},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2026}
 }</code></pre>
+  </div>
 </div>
 
 <script>

@@ -23,13 +23,16 @@ I am currently a graduate student at the School of Computer Science and Technolo
 - *2026.02*: &nbsp;🎉🎉 Our paper was accepted to IEEE/CVF Conference on Computer Vision and Pattern Recognition 2026!
 
 # 📝 Publications 
+NOTE: Corresponding Authors *
 
 <div class='paper-box'><div class='paper-box-image' style="display: flex; align-items: center; justify-content: center;"><div><div class="badge">CVPR 2026</div><img src='/images/framework.png' alt="sym" style="width: 100%; height: auto; object-fit: contain;"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark]()
+All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark
 
-**Junjiang Wu**, Liejun Wang, Zhiqing Guo
+**Junjiang Wu**, Liejun Wang*, Zhiqing Guo*
+
+[**Code**](https://github.com/vpsg-research/LIDMark) | [**Paper**]()
 
 - This work proposes a proactive forensics framework based on a novel 152-D landmark-identity watermark (LIDMark), unifying deepfake detection, tampering localization, and source tracing for the first time.
 
@@ -37,4 +40,4 @@ I am currently a graduate student at the School of Computer Science and Technolo
 </div>
 
 # 📖 Educations
-- *2025.09 - Present*, M.S. Student in Computer Science and Technology, [Xinjiang University](https://www.xju.edu.cn/), Urumqi, China.
+- *2025.09 - Present*, M.S. Student in Computer Science and Technology, Xinjiang University, Urumqi, China. <br> **Advisors:** Prof. [Liejun Wang](https://it.xju.edu.cn/info/1155/3270.htm) and Prof. [Zhiqing Guo](https://www.guozhiqing.cn/).

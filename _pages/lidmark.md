@@ -2,6 +2,9 @@
 permalink: /projects/lidmark/
 title: ""
 author_profile: false
+sidebar: false
+toc: false
+layout: single
 ---
 <style>
   .project-title { font-size: 2.2em; font-weight: bold; text-align: center; margin: 30px 0 10px; color: #2c3e50; line-height: 1.3;}
@@ -23,9 +26,17 @@ author_profile: false
 <div class="conference-tag">(CVPR 2026)</div>
 
 <div class="author-list">
-  <strong>Junjiang Wu</strong><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong>Liejun Wang</strong><sup>1,2 *</sup>&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong>Zhiqing Guo</strong><sup>1,2 *</sup>
+  <a href="https://junjiang-wu.github.io/" target="_blank" style="text-decoration: none; color: inherit; transition: color 0.2s ease;" onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='inherit'">
+    <strong>Junjiang Wu</strong>
+  </a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <a href="https://it.xju.edu.cn/info/1155/3270.htm" target="_blank" style="text-decoration: none; color: inherit; transition: color 0.2s ease;" onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='inherit'">
+    <strong>Liejun Wang</strong>
+  </a><sup>1,2 *</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <a href="http://www.guozhiqing.cn/" target="_blank" style="text-decoration: none; color: inherit; transition: color 0.2s ease;" onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='inherit'">
+    <strong>Zhiqing Guo</strong>
+  </a><sup>1,2 *</sup>
 </div>
 
 <div class="institution-list">

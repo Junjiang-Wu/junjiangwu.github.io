@@ -116,7 +116,7 @@ With the rapid advancement of deepfake technology, malicious face manipulations 
 <div align="center">
   <img src="/images/discrepancy.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
-<p style="text-align: justify; max-width: 800px; margin: 0 auto 40px auto;">
+<p style="text-align: justify; max-width: 800px; margin: 20px auto 40px auto;">
 Comparison of proactive deepfake forensic paradigms. Conventional approaches shown at the top are limited to single tasks or require complex dual-decoder architectures for bifunctional forensics. The proposed "all-in-one" framework illustrated at the bottom employs the trifunctional LIDMark and a novel FHD for deepfake detection, source tracing, and tampering localization.
 </p>
 
@@ -124,7 +124,7 @@ Comparison of proactive deepfake forensic paradigms. Conventional approaches sho
 <div align="center">
   <img src="/images/structure.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
-<p style="text-align: justify; max-width: 800px; margin: 0 auto 40px auto;">
+<p style="text-align: justify; max-width: 800px; margin: 20px auto 40px auto;">
 The 152-D LIDMark $W$ construction. The composite watermark concatenates two primary streams: (1) $W_L$, a 136-D vector of normalized 2-D facial landmarks, and (2) $W_{ID}$, a 16-D bipolar identifier derived via a SHA-256 hash of the filename.
 </p>
 
@@ -164,7 +164,6 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
   function copyBibtex() {
     const bibtexCode = document.getElementById('bibtex-text').innerText;
     navigator.clipboard.writeText(bibtexCode).then(() => {
-      // 修改：只改变 span 里面的文字，防止覆盖图标
       const btnSpan = document.querySelector('#copy-bibtex-btn span');
       btnSpan.innerText = 'Copied!';
       setTimeout(() => { 

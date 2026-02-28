@@ -1,5 +1,7 @@
 ---
 permalink: /projects/lidmark/
+title: ""
+author_profile: false
 ---
 <style>
   .project-title { font-size: 2.2em; font-weight: bold; text-align: center; margin: 30px 0 10px; color: #2c3e50; line-height: 1.3;}

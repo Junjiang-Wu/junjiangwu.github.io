@@ -24,7 +24,7 @@ I am currently a graduate student at the School of Computer Science and Technolo
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='/images/framework.png' alt="sym" width="100%" style="aspect-ratio: 5/3; object-fit: cover;"></div></div>
+<div class='paper-box'><div class='paper-box-image' style="display: flex; align-items: center; justify-content: center;"><div><div class="badge">CVPR 2026</div><img src='/images/framework.png' alt="sym" style="width: 100%; height: auto; object-fit: contain;"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark]()

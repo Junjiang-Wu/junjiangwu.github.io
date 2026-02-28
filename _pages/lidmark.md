@@ -70,6 +70,44 @@ layout: single
     transition: width 0.3s ease-in-out;
   }
   .hover-gradient-link:hover::after { width: 100%; }
+
+  /* Carousel Styles */
+  .carousel-wrapper { position: relative; max-width: 800px; margin: 0 auto 40px auto; }
+  .carousel-container { overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); position: relative; }
+  .carousel-track { display: flex; transition: transform 0.4s ease-in-out; }
+  .carousel-slide { min-width: 100%; box-sizing: border-box; }
+  .carousel-slide img { width: 100%; display: block; }
+  
+  .carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); border: none;
+    color: #333; font-size: 24px; cursor: pointer;
+    padding: 10px 15px; border-radius: 50%; z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: background-color 0.3s;
+  }
+  .carousel-btn:hover { background-color: rgba(255, 255, 255, 1); }
+  .prev-btn { left: -25px; } 
+  .next-btn { right: -25px; }
+  
+  @media (max-width: 850px) {
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+  }
+
+  .carousel-dots { text-align: center; margin-top: 15px; }
+  .dot {
+    cursor: pointer; height: 12px; width: 12px; margin: 0 5px;
+    background-color: #bbb; border-radius: 50%; display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  .dot.active, .dot:hover { background-color: #3498db; }
+  
+  /* Footer Styles */
+  .project-footer {
+    margin-top: 60px; padding: 40px 20px; text-align: center;
+    border-top: 1px solid #e1e4e8; color: #57606a;
+    font-size: 0.95em; line-height: 1.6;
+  }
 </style>
 
 <div class="project-title">
@@ -133,8 +171,25 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
 </p>
 
 <h2 align="center">Results</h2>
-<div align="center" style="margin-bottom: 40px;">
-  <img src="/images/vision.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<div class="carousel-wrapper" id="results-carousel">
+  <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+  
+  <div class="carousel-container">
+    <div class="carousel-track" id="results-track">
+      <div class="carousel-slide">
+        <img src="/images/vision.png" alt="Result Vision 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="/images/vision2.png" alt="Result Vision 2">
+      </div>
+    </div>
+  </div>
+  
+  <div class="carousel-dots">
+    <span class="dot active" onclick="setSlide(0)"></span>
+    <span class="dot" onclick="setSlide(1)"></span>
+  </div>
 </div>
 
 <div style="max-width: 800px; margin: 0 auto 15px auto; display: flex; justify-content: space-between; align-items: center;">
@@ -156,11 +211,19 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
 }</code></pre>
 </div>
 
+<footer class="project-footer">
+  <p>
+    This page was built using the <a href="https://github.com/eliahu/Project-Page-Template" target="_blank" class="hover-gradient-link" style="font-weight: normal;">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io/" target="_blank" class="hover-gradient-link" style="font-weight: normal;">Nerfies</a> project page. You are free to borrow the source code of this website, we just ask that you link back to this page in the footer.
+  </p>
+  <p style="margin-top: 10px;">
+    This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="hover-gradient-link" style="font-weight: normal;">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+  </p>
+</footer>
+
 <script>
   function copyBibtex() {
     const bibtexCode = document.getElementById('bibtex-text').innerText;
     navigator.clipboard.writeText(bibtexCode).then(() => {
-      // 修改：只改变 span 里面的文字，防止覆盖图标
       const btnSpan = document.querySelector('#copy-bibtex-btn span');
       btnSpan.innerText = 'Copied!';
       setTimeout(() => { 
@@ -170,4 +233,60 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
       console.error('Failed to copy text: ', err);
     });
   }
+
+  // Carousel Logic & Auto-play
+  let currentSlide = 0;
+  const totalSlides = 2; // We have vision.png and vision2.png
+  let slideInterval; // Variable to store the interval timer
+
+  function moveSlide(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    updateCarousel();
+    resetAutoPlay(); // Reset timer on manual navigation
+  }
+
+  function setSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+    resetAutoPlay(); // Reset timer on manual navigation
+  }
+
+  function updateCarousel() {
+    const track = document.getElementById('results-track');
+    const dots = document.querySelectorAll('.dot');
+    
+    // Move the track
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+  }
+
+  // Auto-play functions
+  function startAutoPlay() {
+    slideInterval = setInterval(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }, 3000); // 3000 milliseconds = 3 seconds per slide
+  }
+
+  function stopAutoPlay() {
+    clearInterval(slideInterval);
+  }
+
+  function resetAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+
+  // Initialize auto-play when page loads
+  startAutoPlay();
+
+  // Pause auto-play when hovering over the carousel wrapper
+  const carouselWrapper = document.getElementById('results-carousel');
+  carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
+  carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+
 </script>

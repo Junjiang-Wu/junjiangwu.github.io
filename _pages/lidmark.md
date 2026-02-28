@@ -146,7 +146,7 @@ layout: single
 With the rapid advancement of deepfake technology, malicious face manipulations pose a significant threat to personal privacy and social security. However, existing proactive forensics methods typically treat deepfake detection, tampering localization, and source tracing as independent tasks, lacking a unified framework to address them jointly. To bridge this gap, we propose a unified proactive forensics framework that jointly addresses these three core tasks. Our core framework adopts an innovative 152-dimensional landmark-identity watermark termed LIDMark, which structurally interweaves facial landmarks with a unique source identifier. To robustly extract the LIDMark, we design a novel Factorized-Head Decoder (FHD). Its architecture factorizes the shared backbone features into two specialized heads (i.e., regression and classification), robustly reconstructing the embedded landmarks and identifier, respectively, even when subjected to severe distortion or tampering. This design realizes an "all-in-one" trifunctional forensic solution: the regression head underlies an "intrinsic-extrinsic" consistency check for detection and localization, while the classification head robustly decodes the source identifier for tracing. Extensive experiments show that the proposed LIDMark framework provides a unified, robust, and imperceptible solution for the detection, localization, and tracing of deepfake content.
 </p>
 
-<h2 align="center">Comparison of proactive deepfake forensic paradigms</h2>
+<h2 align="center">Comparison of Proactive Deepfake Forensic Paradigms</h2>
 <div align="center">
   <img src="/images/discrepancy.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
@@ -154,7 +154,7 @@ With the rapid advancement of deepfake technology, malicious face manipulations 
 Conventional approaches shown at the top are limited to single tasks or require complex dual-decoder architectures for bifunctional forensics. The proposed "all-in-one" framework illustrated at the bottom employs the trifunctional LIDMark and a novel FHD for deepfake detection, source tracing, and tampering localization.
 </p>
 
-<h2 align="center">Overall of the LIDMark construction</h2>
+<h2 align="center">Overall of the LIDMark Construction</h2>
 <div align="center">
   <img src="/images/structure.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
@@ -162,7 +162,7 @@ Conventional approaches shown at the top are limited to single tasks or require 
 The 152-D LIDMark $W$ construction. The composite watermark concatenates two primary streams: (1) $W_L$, a 136-D vector of normalized 2-D facial landmarks, and (2) $W_{ID}$, a 16-D bipolar identifier derived via a SHA-256 hash of the filename.
 </p>
 
-<h2 align="center">Overview of the LIDMark framework</h2>
+<h2 align="center">Overview of the LIDMark Framework</h2>
 <div align="center">
   <img src="/images/framework.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>

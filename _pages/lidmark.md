@@ -18,7 +18,7 @@ layout: single
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 <style>
-  /* 新增：全局统一为英文新罗马字体 */
+  /* 全局统一为英文新罗马字体 */
   body, p, h1, h2, h3, h4, h5, h6, div, span, a, strong, em, button {
     font-family: "Times New Roman", Times, serif !important;
   }
@@ -141,33 +141,34 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
   <img src="/images/vision.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
 
-<h2 style="text-align: left; max-width: 800px; margin: 0 auto 15px auto;">BibTeX</h2>
-<div style="max-width: 800px; margin: 0 auto 40px auto;">
-  <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-    <button id="copy-bibtex-btn" onclick="copyBibtex()" style="padding: 6px 14px; background-color: #ffffff; border: 1px solid #d0d7de; border-radius: 6px; font-size: 13px; font-weight: bold; color: #24292f; cursor: pointer; transition: background-color 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.04);" onmouseover="this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.backgroundColor='#ffffff'">
-      Copy
-    </button>
-  </div>
-  <div style="background-color: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; overflow-x: auto;">
-    <pre style="margin: 0; font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; font-size: 14px; line-height: 1.45; color: #24292f; white-space: pre-wrap; word-wrap: break-word;"><code id="bibtex-text">@inproceedings{wu2026lidmark,
+<div style="max-width: 800px; margin: 0 auto 15px auto; display: flex; justify-content: space-between; align-items: center;">
+  <h2 style="margin: 0;">BibTeX</h2>
+  <button id="copy-bibtex-btn" class="action-btn" onclick="copyBibtex()" style="border: none; cursor: pointer; padding: 8px 20px;">
+    <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448h192v-64h64v80c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z"></path>
+    </svg>
+    <span>Copy</span>
+  </button>
+</div>
+
+<div style="max-width: 800px; margin: 0 auto 40px auto; background-color: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; overflow-x: auto;">
+  <pre style="margin: 0; font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; font-size: 14px; line-height: 1.45; color: #24292f; white-space: pre-wrap; word-wrap: break-word;"><code id="bibtex-text">@inproceedings{wu2026lidmark,
   title={All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark},
   author={Wu, Junjiang and Wang, Liejun and Guo, Zhiqing},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2026}
 }</code></pre>
-  </div>
 </div>
 
 <script>
   function copyBibtex() {
     const bibtexCode = document.getElementById('bibtex-text').innerText;
     navigator.clipboard.writeText(bibtexCode).then(() => {
-      const btn = document.getElementById('copy-bibtex-btn');
-      btn.innerText = 'Copied!';
-      btn.style.color = '#2da44e'; // 复制成功后变绿提示
+      // 修改：只改变 span 里面的文字，防止覆盖图标
+      const btnSpan = document.querySelector('#copy-bibtex-btn span');
+      btnSpan.innerText = 'Copied!';
       setTimeout(() => { 
-        btn.innerText = 'Copy'; 
-        btn.style.color = '#24292f'; // 两秒后恢复原样
+        btnSpan.innerText = 'Copy'; 
       }, 2000);
     }).catch(err => {
       console.error('Failed to copy text: ', err);

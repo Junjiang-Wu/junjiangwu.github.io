@@ -6,6 +6,17 @@ sidebar: false
 toc: false
 layout: single
 ---
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
 <style>
   .project-title { font-size: 2.2em; font-weight: bold; text-align: center; margin: 30px 0 10px; color: #2c3e50; line-height: 1.3;}
   .conference-tag { font-size: 1.3em; text-align: center; color: #e74c3c; font-weight: bold; margin-bottom: 25px; }
@@ -56,51 +67,39 @@ layout: single
   </a>
 </div>
 
-<hr>
-
 <h2 align="center">Abstract</h2>
-<p style="text-align: justify; max-width: 800px; margin: 0 auto;">
+<p style="text-align: justify; max-width: 800px; margin: 0 auto 40px auto;">
 With the rapid advancement of deepfake technology, malicious face manipulations pose a significant threat to personal privacy and social security. However, existing proactive forensics methods typically treat deepfake detection, tampering localization, and source tracing as independent tasks, lacking a unified framework to address them jointly. To bridge this gap, we propose a unified proactive forensics framework that jointly addresses these three core tasks. Our core framework adopts an innovative 152-dimensional landmark-identity watermark termed LIDMark, which structurally interweaves facial landmarks with a unique source identifier. To robustly extract the LIDMark, we design a novel Factorized-Head Decoder (FHD). Its architecture factorizes the shared backbone features into two specialized heads (i.e., regression and classification), robustly reconstructing the embedded landmarks and identifier, respectively, even when subjected to severe distortion or tampering. This design realizes an "all-in-one" trifunctional forensic solution: the regression head underlies an "intrinsic-extrinsic" consistency check for detection and localization, while the classification head robustly decodes the source identifier for tracing. Extensive experiments show that the proposed LIDMark framework provides a unified, robust, and imperceptible solution for the detection, localization, and tracing of deepfake content.
 </p>
-
-<hr>
 
 <h2 align="center">Differences from Existing Works</h2>
 <div align="center">
   <img src="/images/discrepancy.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
-<p style="text-align: justify; max-width: 800px; margin: 0 auto;">
+<p style="text-align: justify; max-width: 800px; margin: 0 auto 40px auto;">
 Comparison of proactive deepfake forensic paradigms. Conventional approaches shown at the top are limited to single tasks or require complex dual-decoder architectures for bifunctional forensics. The proposed ``all-in-one'' framework illustrated at the bottom employs the trifunctional LIDMark and a novel FHD for deepfake detection, source tracing, and tampering localization.
 </p>
 
-<hr>
-
-<h2 align="center">>Overall of LIDMark</h2>
+<h2 align="center">Overall of LIDMark</h2>
 <div align="center">
   <img src="/images/structure.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
-<p style="text-align: justify; max-width: 800px; margin: 0 auto;">
+<p style="text-align: justify; max-width: 800px; margin: 0 auto 40px auto;">
 The 152-D LIDMark $W$ construction. The composite watermark concatenates two primary streams: (1) $W_L$, a 136-D vector of normalized 2-D facial landmarks, and (2) $W_{ID}$, a 16-D bipolar identifier derived via a SHA-256 hash of the filename.
 </p>
-
-<hr>
 
 <h2 align="center">Overall Framework of LIDMark</h2>
 <div align="center">
   <img src="/images/framework.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
-<p style="text-align: justify; max-width: 800px; margin: 20px auto 0;">
+<p style="text-align: justify; max-width: 800px; margin: 20px auto 40px auto;">
 Overview of the LIDMark framework. The trifunctional forensic framework features an encoder $E$, a stochastic manipulation operator $\mathcal{M}$, a factorized-head decoder FHD, and a discriminator $D$. (a) The encoder embeds the LIDMark $W$ into $I_{co}$ via a two-stream fusion network, yielding the watermarked image $I_{wm}$. (b) $\mathcal{M}$ simulates diverse common distortions and deepfake manipulations on $I_{wm}$, producing the manipulated image $I'_{wm}$. (c) The FHD recovers $\hat{W}_L$ and $\hat{W}_{ID}$ from $I'_{wm}$ via the shared backbone and factorized heads. (d) The multi-task loss functions guide the training process. (e) The ``intrinsic-extrinsic'' consistency check employs recovered landmarks $\hat{W}_L$ and re-detected landmarks $W_{new}$ for fine-grained tamper detection and localization, while identifiers $\hat{W}_{ID}$ are extracted for source tracing.
 </p>
 
-<hr>
-
 <h2 align="center">Results</h2>
-<div align="center">
+<div align="center" style="margin-bottom: 40px;">
   <img src="/images/vision.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
-
-<hr>
 
 <h2 align="center">Citation</h2>
 <div style="max-width: 800px; margin: 0 auto; background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
@@ -109,6 +108,5 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
   author={Wu, Junjiang and Wang, Liejun and Guo, Zhiqing},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2026}
-}
 }</code></pre>
 </div>

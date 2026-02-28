@@ -1,9 +1,3 @@
----
-permalink: /projects/lidmark/
-title: ""
-author_profile: false
----
-
 <div align="center">
   <h1>All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark (CVPR 2026)</h1>
   

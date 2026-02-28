@@ -8,7 +8,7 @@
 # Site Settings
 title                    : "Junjiang Wu - Academic Homepage"
 description              : "Personal academic homepage of Junjiang Wu. Research interests include deepfake detection, proactive forensics, and deep watermarking."
-repository               : "junjiangwu.github.io"
+repository               : "junjiang-wu.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics

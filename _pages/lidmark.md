@@ -19,9 +19,8 @@ layout: single
 
 <style>
   .project-title { font-size: 2.2em; font-weight: bold; text-align: center; margin: 30px 0 10px; color: #2c3e50; line-height: 1.3;}
-  .conference-tag { font-size: 1.3em; text-align: center; color: #e74c3c; font-weight: bold; margin-bottom: 25px; }
+  .conference-tag { font-size: 1.3em; text-align: center; font-weight: bold; margin-bottom: 25px; }
   .author-list { text-align: center; font-size: 1.1em; margin-bottom: 10px; }
-  .author-list strong { color: #34495e; }
   .institution-list { text-align: center; font-size: 0.95em; color: #7f8c8d; margin-bottom: 30px; line-height: 1.5;}
   .btn-container { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
   .action-btn {
@@ -31,21 +30,47 @@ layout: single
   }
   .action-btn:hover { background-color: #1a252f; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
   .action-btn svg { margin-right: 8px; width: 1.2em; height: 1.2em; fill: currentColor; }
+
+  /* 新增：蓝紫渐变滑动下划线链接特效 */
+  .hover-gradient-link {
+    position: relative;
+    text-decoration: none !important;
+    color: #3498db !important; /* 蓝色字体 */
+    display: inline-block;
+  }
+  .hover-gradient-link strong {
+    color: #3498db !important; /* 确保作者名字加粗时依然是蓝色 */
+  }
+  .hover-gradient-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(to right, #3498db, #9b59b6); /* 从蓝到紫的渐变色 */
+    transition: width 0.3s ease-in-out; /* 宽度从0到100%的滑动动画时长 */
+  }
+  .hover-gradient-link:hover::after {
+    width: 100%; /* 鼠标悬停时，线条展开满宽度 */
+  }
 </style>
 
 <div class="project-title">All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark</div>
-<div class="conference-tag">(CVPR 2026)</div>
+<div class="conference-tag">
+  (<a href="https://cvpr.thecvf.com/Conferences/2026" target="_blank" class="hover-gradient-link">CVPR 2026</a>)
+</div>
 
 <div class="author-list">
-  <a href="https://junjiang-wu.github.io/" target="_blank" style="text-decoration: none; color: inherit; transition: color 0.2s ease;" onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='inherit'">
+  <a href="https://junjiang-wu.github.io/" target="_blank" class="hover-gradient-link">
     <strong>Junjiang Wu</strong>
   </a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
 
-  <a href="https://it.xju.edu.cn/info/1155/3270.htm" target="_blank" style="text-decoration: none; color: inherit; transition: color 0.2s ease;" onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='inherit'">
+  <a href="https://it.xju.edu.cn/info/1155/3270.htm" target="_blank" class="hover-gradient-link">
     <strong>Liejun Wang</strong>
   </a><sup>1,2 *</sup>&nbsp;&nbsp;&nbsp;&nbsp;
 
-  <a href="http://www.guozhiqing.cn/" target="_blank" style="text-decoration: none; color: inherit; transition: color 0.2s ease;" onmouseover="this.style.color='#3498db'" onmouseout="this.style.color='inherit'">
+  <a href="http://www.guozhiqing.cn/" target="_blank" class="hover-gradient-link">
     <strong>Zhiqing Guo</strong>
   </a><sup>1,2 *</sup>
 </div>
@@ -101,12 +126,32 @@ Overview of the LIDMark framework. The trifunctional forensic framework features
   <img src="/images/vision.png" alt="LIDMark Framework" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 </div>
 
-<h2 align="center">Citation</h2>
-<div style="max-width: 800px; margin: 0 auto; background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
-<pre><code>@inproceedings{wu2026lidmark,
+<h2 style="text-align: left; max-width: 800px; margin: 0 auto 15px auto;">BibTeX</h2>
+<div style="position: relative; max-width: 800px; margin: 0 auto 40px auto; background-color: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; overflow-x: auto;">
+  <button id="copy-bibtex-btn" onclick="copyBibtex()" style="position: absolute; top: 12px; right: 12px; padding: 6px 12px; background-color: #ffffff; border: 1px solid #d0d7de; border-radius: 6px; font-size: 13px; font-weight: 500; color: #24292f; cursor: pointer; transition: background-color 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.04);" onmouseover="this.style.backgroundColor='#f3f4f6'" onmouseout="this.style.backgroundColor='#ffffff'">
+    Copy
+  </button>
+  <pre style="margin: 0; font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; font-size: 14px; line-height: 1.45; color: #24292f; white-space: pre-wrap; word-wrap: break-word;"><code id="bibtex-text">@inproceedings{wu2026lidmark,
   title={All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark},
   author={Wu, Junjiang and Wang, Liejun and Guo, Zhiqing},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2026}
 }</code></pre>
 </div>
+
+<script>
+  function copyBibtex() {
+    const bibtexCode = document.getElementById('bibtex-text').innerText;
+    navigator.clipboard.writeText(bibtexCode).then(() => {
+      const btn = document.getElementById('copy-bibtex-btn');
+      btn.innerText = 'Copied!';
+      btn.style.color = '#2da44e'; // 复制成功后变绿提示
+      setTimeout(() => { 
+        btn.innerText = 'Copy'; 
+        btn.style.color = '#24292f'; // 两秒后恢复原样
+      }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy text: ', err);
+    });
+  }
+</script>

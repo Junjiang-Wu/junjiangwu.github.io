@@ -1,6 +1,6 @@
 ---
+title: "VPSG"
 permalink: /projects/lidmark/
-title: ""
 author_profile: false
 sidebar: false
 toc: false

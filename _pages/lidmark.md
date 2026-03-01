@@ -1,11 +1,10 @@
 ---
+title: "LIDMark"
 permalink: /projects/lidmark/
-title: ""
-seo_title: "LIDMark"
 author_profile: false
 sidebar: false
 toc: false
-layout: single
+layout: default
 ---
 
 <script>

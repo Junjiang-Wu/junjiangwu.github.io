@@ -4,7 +4,7 @@ permalink: /projects/lidmark/
 author_profile: false
 sidebar: false
 toc: false
-layout: default
+layout: single
 ---
 
 <script>

@@ -1,11 +1,11 @@
 ---
-title: "LIDMark"
 permalink: /projects/lidmark/
 author_profile: false
 sidebar: false
 toc: false
 layout: single
 ---
+<title>LIDMark</title>
 
 <script>
   MathJax = {

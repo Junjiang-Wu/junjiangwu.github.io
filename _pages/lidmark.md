@@ -1,6 +1,6 @@
 ---
 permalink: /projects/lidmark/
-title: VPSG
+title:  "All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark"
 author_profile: false
 sidebar: false
 toc: false

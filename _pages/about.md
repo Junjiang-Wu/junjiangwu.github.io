@@ -38,4 +38,4 @@ NOTE: Corresponding Authors *
 </div>
 
 # 📖 Educations
-- *2025.09 - Present*, M.S. Student in Computer Science and Technology, Xinjiang University, Urumqi, China. <br> **Advisors:** Prof. [Liejun Wang](https://it.xju.edu.cn/info/1155/3270.htm) and Prof. [Zhiqing Guo](https://www.guozhiqing.cn/).
+- *2024.09 - Present*, M.S. Student in Computer Science and Technology, Xinjiang University, Urumqi, China. <br> **Advisors:** Prof. [Liejun Wang](https://it.xju.edu.cn/info/1155/3270.htm) and Prof. [Zhiqing Guo](https://www.guozhiqing.cn/).

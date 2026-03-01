@@ -1,4 +1,5 @@
 ---
+seo_title: "VPSG"
 title: "VPSG"
 permalink: /projects/lidmark/
 author_profile: false

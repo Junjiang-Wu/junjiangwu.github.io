@@ -1,6 +1,6 @@
 ---
 permalink: /projects/lidmark/
-title: "VPSG"
+title: VPSG
 author_profile: false
 sidebar: false
 toc: false

@@ -5,7 +5,7 @@ sidebar: false
 toc: false
 layout: single
 ---
-<title>LIDMark</title>
+<title>VPSG | LIDMark</title>
 
 <script>
   MathJax = {

@@ -1,7 +1,7 @@
 ---
-title: "正文显示的大标题"
-seo_title: "你想在浏览器标签页显示的文字"
 permalink: /projects/lidmark/
+title: ""
+seo_title: "LIDMark"
 author_profile: false
 sidebar: false
 toc: false

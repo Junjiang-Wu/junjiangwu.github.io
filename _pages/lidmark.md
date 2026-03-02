@@ -203,14 +203,11 @@ The trifunctional forensic framework features an encoder $E$, a stochastic manip
 </div>
 
 <div style="max-width: 800px; margin: 0 auto 40px auto; background-color: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; overflow-x: auto;">
-  <pre style="margin: 0; font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; font-size: 14px; line-height: 1.45; color: #24292f; white-space: pre-wrap; word-wrap: break-word;"><code id="bibtex-text">@misc{wu2026oneunifyingdeepfakedetection,
-      title={All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark}, 
-      author={Junjiang Wu and Liejun Wang and Zhiqing Guo},
-      year={2026},
-      eprint={2602.23523},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2602.23523}, 
+  <pre style="margin: 0; font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; font-size: 14px; line-height: 1.45; color: #24292f; white-space: pre-wrap; word-wrap: break-word;"><code id="bibtex-text">@inproceedings{wu2026all,
+  title={All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark},
+  author={Wu, Junjiang and Wang, Liejun and Guo, Zhiqing},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2026}
 }</code></pre>
 </div>
 

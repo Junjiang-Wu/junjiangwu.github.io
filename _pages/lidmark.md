@@ -118,8 +118,8 @@ layout: single
 
 <div class="author-list">
   <a href="https://junjiang-wu.github.io/" target="_blank" class="hover-gradient-link"><strong>Junjiang Wu</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://it.xju.edu.cn/info/1155/3270.htm" target="_blank" class="hover-gradient-link"><strong>Liejun Wang</strong></a><sup>1,2 *</sup>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="http://www.guozhiqing.cn/" target="_blank" class="hover-gradient-link"><strong>Zhiqing Guo</strong></a><sup>1,2 *</sup>
+  <a href="https://it.xju.edu.cn/info/1155/3270.htm" target="_blank" class="hover-gradient-link"><strong>Liejun Wang*</strong></a><sup>1,2 *</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="http://www.guozhiqing.cn/" target="_blank" class="hover-gradient-link"><strong>Zhiqing Guo*</strong></a><sup>1,2 *</sup>
 </div>
 
 <div class="institution-list">

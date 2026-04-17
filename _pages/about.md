@@ -23,7 +23,7 @@ I am currently a graduate student at the School of Computer Science and Technolo
 - *2026.02*: &nbsp;🎉🎉 Our paper was accepted to IEEE/CVF Conference on Computer Vision and Pattern Recognition 2026!
 
 # 📝 Publications 
-NOTE: Corresponding Authors *
+NOTE: Corresponding Authors <sup>*</sup>
 
 <div class='paper-box'><div class='paper-box-image' style="display: flex; align-items: center; justify-content: center;"><div><div class="badge">CVPR 2026</div><img src='/images/framework.png' alt="sym" style="width: 100%; height: auto; object-fit: contain;"></div></div>
 <div class='paper-box-text' markdown="1">

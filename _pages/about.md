@@ -30,7 +30,7 @@ NOTE: Corresponding Authors *
 
 [All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark](https://junjiang-wu.github.io/projects/lidmark/)
 
-**Junjiang Wu**, Liejun Wang*, Zhiqing Guo*
+**Junjiang Wu**, Liejun Wang<sup>*</sup>, Zhiqing Guo<sup>*</sup>
 
 - This work proposes a proactive forensics framework based on a novel 152-D landmark-identity watermark (LIDMark), unifying deepfake detection, tampering localization, and source tracing for the first time.
 

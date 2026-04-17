@@ -23,9 +23,9 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Junjiang Wu"
   avatar           : "/images/profile.jpg"
-  bio              : "Researcher in Deepfake Detection & Information Security"
+  bio              : "School of Computer Science and Technology, Xinjiang University"
   location         : "Urumqi, China"
-  employer         : "Xinjiang University"
+  # employer         : "Xinjiang University"
   pubmed           : 
   googlescholar    : 
   email            : "107552401350@stu.xju.edu.cn"

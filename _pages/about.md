@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am currently a graduate student at the School of Computer Science and Technology of Xinjiang University in Urumqi, China. My research interest includes deepfake detection, proactive forensics, and deep watermarking.
+I am currently a graduate student at the School of Computer Science and Technology of Xinjiang University in Urumqi, China. My research interest includes deepfake detection, multimedia forensics, and deep watermarking.
 
 # 🔥 News
 - *2026.02*: &nbsp;🎉🎉 Our paper was accepted to IEEE/CVF Conference on Computer Vision and Pattern Recognition 2026!

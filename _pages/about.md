@@ -32,7 +32,7 @@ NOTE: Corresponding Authors <sup>*</sup>
 
 **Junjiang Wu**, Liejun Wang<sup>*</sup>, Zhiqing Guo<sup>*</sup>
 
-- This work proposes a proactive forensics framework based on a novel 152-D landmark-identity watermark (LIDMark), unifying deepfake detection, tampering localization, and source tracing for the first time.
+- This work proposes an "all-in-one" proactive forensic solution, which simultaneously enables deepfake detection, tampering localization, and source tracing within a unified framework.
 
 </div>
 </div>
